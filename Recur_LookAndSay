@@ -1,0 +1,21 @@
+function saycount(n: number) :string { 
+    
+    if (n===1){return '1'}
+
+    let result = '';
+    let previous = saycount(n-1);
+    let count = 1;
+
+    for(let i = 0; i<previous.length; i++){
+        if (previous[i] == previous[i+1]){
+            count++;
+        }else{
+            result = result+count+previous[i];
+            count = 1;   
+        }
+    }
+
+    return result
+}
+
+console.log(saycount(4));
